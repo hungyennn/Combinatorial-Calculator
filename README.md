@@ -1,6 +1,6 @@
 # Combinatorial-Calculator
 
-###Part I
+### Part I
 input: integers n, r, where 0<=r<=n
 output:
 1. results of P(n, r), with respect to n, r 
@@ -8,7 +8,7 @@ output:
 3. results of n^r, with respect to n, r
 4. results of C(r+n-1, r), with respect to n, r
 --------------------------------------------------------------
-###Part II
+### Part II
 input: integers n, 0<=n
 output:
 5. results of the first n Catalan number, with respect to n
@@ -24,13 +24,12 @@ output 1, 1, 2, 5, 14, 42
 
 Harmonic Number
 input 3
-output 1, 3/2, 11/6
-
+output 1, 3/2, 11/6<br>
 Lucas Number
 input 8
 output 2, 1, 3, 4, 7, 11, 18, 29
 --------------------------------------------------------------
-###Part III
+### Part III
 input: integers n, 0<=n
 output:
 10. results of Eulerian number, with respect to n
