@@ -19,10 +19,11 @@ For Example：<br>
 Catalan Number<br>
 input：6<br>
 output：1, 1, 2, 5, 14, 42<br>
-
+<br>
 Harmonic Number<br>
 input：3<br>
 output：1, 3/2, 11/6<br>
+<br>
 Lucas Number<br>
 input：8<br>
 output：2, 1, 3, 4, 7, 11, 18, 29<br>
@@ -37,7 +38,7 @@ For Example：<br>
 Eulerian number<br>
 input：4<br>
 output：1, 11, 11, 1<br>
-
+<br>
 Stirling number<br>
 input：6<br>
 output：1, 31, 90, 65, 15, 1<br>
