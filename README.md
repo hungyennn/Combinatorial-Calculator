@@ -10,35 +10,35 @@ output:
 ### Part II
 input: integers n, 0<=n <br>
 output:<br>
-5. results of the first n Catalan number, with respect to n
-6. results of the first n triangular number, with respect to n
-7. results of the first n harmonic number, with respect to n
-8. results of the first n Fibonacci number, with respect to n
-9. results of the first n Lucas number, with respect to n
+5. results of the first n Catalan number, with respect to n<br>
+6. results of the first n triangular number, with respect to n<br>
+7. results of the first n harmonic number, with respect to n<br>
+8. results of the first n Fibonacci number, with respect to n<br>
+9. results of the first n Lucas number, with respect to n<br>
 <br>
 For Example：<br>
 Catalan Number<br>
 input 6<br>
 output 1, 1, 2, 5, 14, 42<br>
 <br>
-Harmonic Number
-input 3
-output 1, 3/2, 11/6
-Lucas Number
-input 8
-output 2, 1, 3, 4, 7, 11, 18, 29
+Harmonic Number<br>
+input 3<br>
+output 1, 3/2, 11/6<br>
+Lucas Number<br>
+input 8<br>
+output 2, 1, 3, 4, 7, 11, 18, 29<br>
 <br>
 ### Part III
-input: integers n, 0<=n
-output:
-10. results of Eulerian number, with respect to n
-11. results of Stirling number, with respect to n
+input: integers n, 0<=n<br>
+output:<br>
+10. results of Eulerian number, with respect to n<br>
+11. results of Stirling number, with respect to n<br>
 <br>
-For Example：
-Eulerian number
-input 4
-output 1, 11, 11, 1
+For Example：<br>
+Eulerian number<br>
+input 4<br>
+output 1, 11, 11, 1<br>
 <br>
-Stirling number
-input 6
-output 1, 31, 90, 65, 15, 1
+Stirling number<br>
+input 6<br>
+output 1, 31, 90, 65, 15, 1<br>
