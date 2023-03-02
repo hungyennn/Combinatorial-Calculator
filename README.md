@@ -8,18 +8,18 @@ output:
 3. results of n^r, with respect to n, r
 4. results of C(r+n-1, r), with respect to n, r
 ### Part II
-input: integers n, 0<=n
-output:
+input: integers n, 0<=n <br>
+output:<br>
 5. results of the first n Catalan number, with respect to n
 6. results of the first n triangular number, with respect to n
 7. results of the first n harmonic number, with respect to n
 8. results of the first n Fibonacci number, with respect to n
 9. results of the first n Lucas number, with respect to n
 <br>
-For Example：
-Catalan Number
-input 6
-output 1, 1, 2, 5, 14, 42
+For Example：<br>
+Catalan Number<br>
+input 6<br>
+output 1, 1, 2, 5, 14, 42<br>
 <br>
 Harmonic Number
 input 3
