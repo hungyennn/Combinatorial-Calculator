@@ -11,11 +11,11 @@ output:<br>
 ### Part II
 input: integers n, 0<=n <br>
 output:<br>
-5. results of the first n Catalan number, with respect to n<br>
-6. results of the first n triangular number, with respect to n<br>
-7. results of the first n harmonic number, with respect to n<br>
-8. results of the first n Fibonacci number, with respect to n<br>
-9. results of the first n Lucas number, with respect to n<br>
+	5. results of the first n Catalan number, with respect to n<br>
+	6. results of the first n triangular number, with respect to n<br>
+	7. results of the first n harmonic number, with respect to n<br>
+	8. results of the first n Fibonacci number, with respect to n<br>
+	9. results of the first n Lucas number, with respect to n<br>
 
 For Example：<br>
 Catalan Number<br>
@@ -33,8 +33,8 @@ output 2, 1, 3, 4, 7, 11, 18, 29<br>
 ### Part III
 input: integers n, 0<=n<br>
 output:<br>
-10. results of Eulerian number, with respect to n<br>
-11. results of Stirling number, with respect to n<br>
+	10. results of Eulerian number, with respect to n<br>
+	11. results of Stirling number, with respect to n<br>
 
 For Example：<br>
 Eulerian number<br>
