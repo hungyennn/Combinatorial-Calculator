@@ -7,6 +7,7 @@ output:<br>
 2. results of C(n, r), with respect to n, r
 3. results of n^r, with respect to n, r
 4. results of C(r+n-1, r), with respect to n, r
+
 ### Part II
 input: integers n, 0<=n <br>
 output:<br>
@@ -15,30 +16,31 @@ output:<br>
 7. results of the first n harmonic number, with respect to n<br>
 8. results of the first n Fibonacci number, with respect to n<br>
 9. results of the first n Lucas number, with respect to n<br>
-<br>
+
 For Example：<br>
 Catalan Number<br>
 input 6<br>
 output 1, 1, 2, 5, 14, 42<br>
-<br>
+
 Harmonic Number<br>
 input 3<br>
 output 1, 3/2, 11/6<br>
 Lucas Number<br>
 input 8<br>
 output 2, 1, 3, 4, 7, 11, 18, 29<br>
-<br>
+
+
 ### Part III
 input: integers n, 0<=n<br>
 output:<br>
 10. results of Eulerian number, with respect to n<br>
 11. results of Stirling number, with respect to n<br>
-<br>
+
 For Example：<br>
 Eulerian number<br>
 input 4<br>
 output 1, 11, 11, 1<br>
-<br>
+
 Stirling number<br>
 input 6<br>
 output 1, 31, 90, 65, 15, 1<br>
