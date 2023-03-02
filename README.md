@@ -1,8 +1,8 @@
 # Combinatorial-Calculator
 
 ### Part I
-input: integers n, r, where 0<=r<=n
-output:
+input: integers n, r, where 0<=r<=n<br>
+output:<br>
 1. results of P(n, r), with respect to n, r 
 2. results of C(n, r), with respect to n, r
 3. results of n^r, with respect to n, r
