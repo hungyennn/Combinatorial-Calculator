@@ -2,7 +2,7 @@
 
 ### Part I
 input: integers n, r, where 0<=r<=n<br>
-1. results of P(n, r), with respect to n, r 
+* results of P(n, r), with respect to n, r 
 2. results of C(n, r), with respect to n, r
 3. results of n^r, with respect to n, r
 4. results of C(r+n-1, r), with respect to n, r
