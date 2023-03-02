@@ -1,0 +1,800 @@
+<!DOCTYPE html> 
+
+<html>  
+
+<head> 
+  <title> 
+    Combinatorial Calculator
+  </title>
+  <!-- 打公式所需 -->
+  <script type="text/javascript" src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full"></script>
+  <style>
+
+  body
+  {  
+    font-family: monospace;
+  }
+
+  label
+  {
+    font-family: times;
+  }
+  table  
+  { 
+    text-align: center;
+    border-collapse: collapse;
+  }
+
+  th, td  
+  { 
+    padding: 5px;
+    border: 1px solid #dddddd;
+  }
+
+  input[type="number"]
+  { 
+    width: 60px;
+  }
+
+  button 
+  {
+    width: 150px;
+    display: inline-block;
+    padding: 8px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: black;
+    background-color: #FFD2D2;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 2px #999;
+    font-family: monospace;
+  }
+
+  </style>
+
+</head>
+
+<body> 
+
+<table  style="text-align:left; border-style: hidden;">   
+<tr>
+  <td rowspan="3" style="border-style: hidden;">
+    <img src="math.png" alt="math" width="70" height="70">
+  </td>
+  
+  <td> 
+    <b><u>Combinatorial Calculator</u></b> <br> <font size="-1" color="887799"> by Hong-Yen, Wu | Dec. 2022
+  </td>
+</tr>
+</table>   
+
+ 
+<!------------------------ Part I ------------------------>
+<h2>Part I</h2>
+<table> 
+ <tr bgcolor="	#ACD6FF";>
+  <th>Formula</th>
+
+  <th>
+    <label><i>n</i> = </label>
+    <input type="number" id="n" value="7" min="0">
+    <label><i>r</i> = </label>
+    <input type="number" id="r" value="3" min="0">
+  </th>
+
+  <th style="width: 120px;"><button type="button" onclick="computeAll1()">Compute All</button></th> 
+
+  <th>Order relevant</th>
+  <th>Repetition</th>  
+  <th>Memo</th>        
+
+ </tr> 
+
+ <tr>
+  <td>
+    <label><i>P</i>(<i>n</i>, <i>r</i>)</label>
+  </td>
+
+  <td>
+   <span id="resPermutation"></span>
+  </td>
+
+  <td>
+   <button type="button" onclick="clickPerm()">Permutation</button>
+  </td>
+
+  <td>yes</td>
+  <td>no</td>
+
+  <td align="left">
+    # Permutations of size <i>r</i> from <i>n</i> distinct objects
+  </td>
+ </tr>
+
+ <tr>
+  <td>
+   <label><i>C</i>(<i>n</i>, <i>r</i>)</label>
+  </td>
+
+  <td>
+   <span id="resCombination"></span>
+  </td>
+
+  <td>
+   <button type="button" onclick="clickComb()">Combination</button>
+  </td>
+
+  <td>no</td>
+
+  <td>no</td>
+
+  <td align="left">
+    # Selections/Combinations of size <i>r</i> from <i>n</i> distinct objects
+  </td>
+ </tr>
+
+ <tr>
+
+  <td>
+
+   <label><i>n<sup>r</sup></i></label>
+
+  </td>
+
+  <td>
+
+   <span id="resArrangement"></span>
+
+  </td>
+
+  <td>
+
+   <button type="button" onclick="clickArra()">Arrangement with repetition</button>
+
+  </td>
+
+  <td>
+
+   yes
+
+  </td>
+
+  <td>
+
+   yes
+
+  </td>
+
+  <td align="left">
+
+   # Arrangements with repetition of size <i>r</i> from <i>n</i> distinct objects
+
+  </td>
+
+ </tr>
+
+ <tr>
+
+  <td>
+
+   <label><i>C</i>(<i>r</i>+<i>n</i>-1, <i>r</i>)</label>
+
+  </td>
+
+  <td>
+
+   <span id="resSelectrofn"></span>
+
+  </td>
+
+  <td>
+
+   <button type="button" onclick="clickSele()">Selection with repetition</button>
+
+  </td>
+
+  <td>
+
+   no
+
+  </td>
+
+  <td>
+
+   yes
+
+  </td>
+
+  <td align="left">
+
+   # Selections with repetition of size <i>r</i> from <i>n</i> distinct objects
+
+  </td>
+
+ </tr>
+
+</table>
+
+
+
+<!------------------------ Part II ------------------------>
+<h2>Part II</h2>
+<table> 
+ <tr  bgcolor="	#ACD6FF";>
+  <th>Formula</th>
+  
+  <th width = "250">
+    <label><i>n</i> = </label>
+    <input type="number" id="n1" value="6" min="1" >
+  </th>
+
+  <th style="width: 120px;"><button type="button" onclick="computeAll2()">Compute All</button></th>
+
+  <th>Memo</th>  
+ </tr> 
+
+ <tr>
+  <td>
+    `C_n=[(2n)!]/[(n+1)!n!]`
+  </td>
+
+  <td>
+   <span id="resCatalon"></span>
+  </td>
+
+  <td>
+   <button type="button" onclick="clickCatalon()">Catalon</button>
+  </td>
+
+  <td align="left">
+    # The first Catalan numbers for <i>n</i> = 1, 2, 3, 4, ... are 1, 1, 2, 5, ...
+  </td>
+ </tr>
+
+ <tr>
+  <td>
+   `[n(n+1)]/2`
+  </td>
+
+  <td>
+   <span id="resTriangular"></span>
+  </td>
+
+  <td>
+   <button type="button" onclick="clickTriangular()">Triangular</button>
+  </td>
+
+  <td align="left">
+    # Counts objects arranged in an equilateral triangle.  <br> for <i>n</i> = 1, 2, 3, 4, ... are 1, 3, 6, 10, ...
+  </td>
+ </tr>
+
+ <tr>
+
+  <td>
+    `H_n=sum_(k=1)^n(1/k)`
+  </td>
+
+  <td>
+   <span id="resHarmonic"></span>
+  </td>
+
+  <td>
+   <button type="button" onclick="clickHarmonic()">Harmonic</button>
+  </td>
+
+  <td align="left">
+    # The <i>n</i>-th harmonic number is the sum of the reciprocals of the first <i>n</i> natural numbers.
+  </td>
+ </tr>
+
+ <tr>
+
+  <td>
+    `F_n=F_(n-1)+F_(n-2) (n>=2)`
+  </td>
+
+  <td>
+   <span id="resFibonacci"></span>
+  </td>
+
+  <td>
+   <button type="button" onclick="clickFibonacci()">Fibonacci</button>
+  </td>
+
+  <td align="left">
+    # The sequence follows the rule that each number is equal to the sum of the preceding two numbers. <br>
+    # start as 1, 1
+  </td>
+ </tr>
+
+ <tr>
+
+  <td>
+    `L_n=L_(n-1)+L_(n-2) (n>1)`
+  </td>
+
+  <td>
+   <span id="resLucas"></span>
+  </td>
+
+  <td>
+   <button type="button" onclick="clickLucas()">Lucas</button>
+  </td>
+
+  <td align="left">
+    # Similar to the Fibonacci numbers, each Lucas number is defined to be the sum of its two immediately previous terms.<br>
+    # start as 2, 1
+  </td>
+ </tr>
+ 
+</table>
+
+<!------------------------ Part III ------------------------>
+<h2>Part III</h2>
+<table>
+  <tr  bgcolor="	#ACD6FF";>
+    <th>Formula</th>
+    
+    <th width = "250">
+      <label><i>n</i> = </label>
+      <input type="number" id="n2" value="4" min="0" >
+    </th>
+  
+    <th style="width: 120px;"><button type="button" onclick="computeAll3()">Compute All</button></th> 
+    <th>Memo</th>  
+  </tr>
+
+  <tr>
+    <td>
+      `A(n,m)`
+    </td>
+  
+    <td>
+     <span id="resEulerian"></span>
+    </td>
+  
+    <td>
+     <button type="button" onclick="clickEulerian()">Eulerian</button>
+    </td>
+
+    <td align="left">
+      # The number of permutations of the numbers 1 to <i>n</i> in which exactly <i>m</i> elements are greater than the previous element.
+    </td>
+   </tr>
+  
+   <tr>
+    <td>
+     `S(n, k)`
+    </td>
+  
+    <td>
+     <span id="resStirling"></span>
+    </td>
+  
+    <td>
+     <button type="button" onclick="clickStirling()">Stirling</button>
+    </td>
+
+    <td align="left">
+      # The number of ways to partition a set of <i>n</i> objects into <i>k</i> non-empty subsets.
+    </td>
+   </tr>
+
+</table>
+
+
+<script>
+
+// ------------------------ Part I ------------------------
+
+ function Factorial(n)
+
+ { fact = 1;
+
+  for (i=2; i<=n; i++)
+
+   fact *= i;
+
+  return fact;
+
+ }
+
+ function Perm(n, r)
+
+ { perm = n;
+
+  for (i=n-1; i>n-r; i--)
+
+   perm *= i;
+
+  return perm;
+
+ }
+
+ function Comb(n, r)
+
+ { return Perm(n, r) / Factorial(r);
+
+ } 
+
+ function invalid(n, r)
+
+ { if (parseInt(n) < 0 || isNaN(parseInt(n)))
+
+  { document.getElementById("n").focus();
+
+   return true;
+
+  }
+
+  else if (parseInt(r) < 0 || isNaN(parseInt(r)))
+
+  { document.getElementById("r").focus();
+
+   return true;
+
+  }
+
+  return false;
+
+ }
+
+ 
+
+ function computeAll1()
+
+ { document.getElementById("resPermutation").innerHTML = "";
+
+  document.getElementById("resCombination").innerHTML = "";
+
+  document.getElementById("resArrangement").innerHTML = "";
+
+  document.getElementById("resSelectrofn").innerHTML = "";
+
+  n = document.getElementById("n").value;
+
+  r = document.getElementById("r").value;
+
+  if (invalid(n, r)) return;    
+
+  clickPerm();
+
+  clickComb();
+
+  clickArra();
+
+  clickSele();
+
+ }
+
+ function clickPerm()
+
+ { document.getElementById("resPermutation").innerHTML = "";
+
+  n = document.getElementById("n").value;
+
+  r = document.getElementById("r").value;
+
+  if (invalid(n, r)) return;
+
+  document.getElementById("resPermutation").innerHTML = Perm(n, r);
+
+ }
+
+ function clickComb()
+
+ { document.getElementById("resCombination").innerHTML = "";
+
+  n = document.getElementById("n").value;
+
+  r = document.getElementById("r").value;          
+
+  if (invalid(n, r)) return;    
+
+  document.getElementById("resCombination").innerHTML = Comb(n, r);
+
+ }
+
+ function clickArra()
+
+ { document.getElementById("resArrangement").innerHTML = ""
+
+  n = document.getElementById("n").value;
+
+  r = document.getElementById("r").value;
+
+  if (invalid(n, r)) return;    
+
+  document.getElementById("resArrangement").innerHTML = Math.pow(n, r);
+
+ }
+
+ function clickSele()
+
+ { document.getElementById("resSelectrofn").innerHTML = "";
+
+  n = parseInt(document.getElementById("n").value);
+
+  r = parseInt(document.getElementById("r").value);
+
+  if (invalid(n, r)) return;
+
+  document.getElementById("resSelectrofn").innerHTML = Comb(n + r - 1, r);
+
+ }
+
+
+
+
+
+// ------------------------ Part II ------------------------
+
+function invalid1(n)
+
+ { if (parseInt(n) < 0 || isNaN(parseInt(n)))
+
+  { document.getElementById("n1").focus();
+
+   return true;
+
+  }
+
+  return false;
+
+ }
+
+function Catalon(n)
+{ 
+  // For the first number
+  let cat_ = 1;
+  let arr = [cat_ ];
+
+  // Iterate until n
+  for (let i = 1; i < n; i++)
+  {
+      // Calculate 
+      cat_ *= (4 * i - 2);
+      cat_ /= (i + 1);
+      arr.push(" " + cat_ );
+  }
+  
+  
+  return arr;
+}
+
+function Triangular(n)
+{ 
+  // For the first number
+  let num = 1;
+  let arr = [num];
+
+  // Iterate until n
+  for (let i = 2; i <= n; i++)
+  {
+      // Calculate 
+      num += i;
+      arr.push(" " + num);
+  }
+  return arr;
+}
+
+function Harmonic(n)
+{ 
+  // For the first number
+  // H1 = 1
+  let num = 1.00;
+  let arr = [num];
+
+  // Iterate until n
+  for (let i = 2; i <= n; i++)
+  {
+      // Calculate 
+    num += parseFloat(1) / i;
+    arr.push(" " + num);
+  }
+  return arr;
+}
+
+function Fibonacci(n)
+{ 
+  if (n <= 1) {
+    return n;
+  }
+  
+  let arr = [0, 1];
+  let result = [1];
+
+  for (let i = 2 ; i <= n ; i++) {
+    arr[i] = arr[i - 2] + arr[i - 1];
+    result.push(" " + arr[i]);
+  }
+
+  return result;
+}
+
+function Lucas(n)
+{ 
+  
+  let arr = [2, 1];
+  let result = [];
+  let result1 = [];
+
+  arr[0] = 2;
+  arr[1] = 1;
+ 
+  for (let i = 2 ; i < n ; i++){
+    arr[i] = arr[i - 2] + arr[i - 1];
+    result.push(" " + arr[i]);
+  }
+
+  if (n>1){
+    result1.push(" " + arr[0]);
+    result1.push(" " + arr[1]);
+    result1.push(" " + result);
+  }else{
+    result1.push(" " + arr[0]);
+  }
+  
+  return result1;
+
+}
+
+function computeAll2()
+{ 
+  document.getElementById("resCatalon").innerHTML = ""; 
+  document.getElementById("resTriangular").innerHTML = "";
+  document.getElementById("resHarmonic").innerHTML = "";
+  document.getElementById("resFibonacci").innerHTML = "";
+  document.getElementById("resLucas").innerHTML = "";
+  n = document.getElementById("n1").value;
+  if (invalid1(n)) return;    
+  clickCatalon();
+  clickTriangular();
+  clickHarmonic();
+  clickFibonacci();
+  clickLucas();
+}
+
+function clickCatalon()
+{ 
+  document.getElementById("resCatalon").innerHTML = "";
+  n = document.getElementById("n1").value;
+  if (invalid1(n)) return;
+  document.getElementById("resCatalon").innerHTML = Catalon(n);
+}
+
+function clickTriangular()
+{ 
+  document.getElementById("resTriangular").innerHTML = "";
+  n = document.getElementById("n1").value;
+  if (invalid1(n)) return;
+  document.getElementById("resTriangular").innerHTML = Triangular(n);
+}
+
+function clickHarmonic()
+{ 
+  document.getElementById("resHarmonic").innerHTML = "";
+  n = document.getElementById("n1").value;
+  if (invalid1(n)) return;
+  document.getElementById("resHarmonic").innerHTML = Harmonic(n);
+}
+
+function clickFibonacci()
+{ 
+  document.getElementById("resFibonacci").innerHTML = "";
+  n = document.getElementById("n1").value;
+  if (invalid1(n)) return;
+  document.getElementById("resFibonacci").innerHTML = Fibonacci(n);
+}
+
+function clickLucas()
+{ 
+  document.getElementById("resLucas").innerHTML = "";
+  n = document.getElementById("n1").value;
+  if (invalid1(n)) return;
+  document.getElementById("resLucas").innerHTML = Lucas(n);
+}
+
+// ------------------------ Part III ------------------------
+
+function invalid2(n)
+
+ { if (parseInt(n) < 0 || isNaN(parseInt(n)))
+
+  { document.getElementById("n2").focus();
+
+   return true;
+
+  }
+
+  return false;
+
+ }
+
+function Eulerian(n)
+{ 
+  let m = n - 1;
+  let dp = Array.from({ length: parseInt(n)+1 }, () => Array.from({ length: parseInt(m)+1 }, () => 0));
+  
+  // For each row from 1 to n
+  for (let i = 1; i <= n; i++) {
+
+      // For each column from 0 to m
+      for (let j = 0; j <= m; j++) {
+
+          // If i is greater than j
+          if (i > j) {
+
+              // If j is 0, then make that
+              // state as 1.
+              if (j == 0)
+                  dp[i][j] = 1;
+
+              // basic recurrence relation.
+              else
+                  dp[i][j] = ((i - j) *dp[i - 1][j - 1]) + ((j + 1) * dp[i - 1][j]);
+          }
+      }
+  }
+  //console.log(dp);
+  return dp[n];
+}
+
+function Stirling(n)
+{
+  const k = n ;
+  let result = Array.from({ length: parseInt(n)+1 }, () => Array.from({ length: parseInt(n)+1 }, () => 0));
+
+  for (let i = 0; i <= n; i++){
+    
+    for(let j = 0; j <= n; j++){
+      if(i>=j){  
+        if(j == 0)
+          result[i][j] = 0;
+        else if(i == j)
+          result[i][j] = 1;
+        else
+          result[i][j] = j*result[i-1][j] + result[i-1][j-1];
+      }
+    }
+  }
+  //console.log(result);
+  return result[n];
+}
+
+function computeAll3()
+{ 
+  document.getElementById("resEulerian").innerHTML = ""; 
+  document.getElementById("resStirling").innerHTML = "";
+  n = document.getElementById("n2").value;
+  if (invalid2(n)) return;    
+  clickEulerian();
+  clickStirling();
+}
+
+function clickEulerian()
+{ 
+  document.getElementById("resEulerian").innerHTML = "";
+  n = document.getElementById("n2").value;
+  if (invalid2(n)) return;
+  document.getElementById("resEulerian").innerHTML = Eulerian(n);
+}
+
+function clickStirling()
+{ 
+  document.getElementById("resStirling").innerHTML = "";
+  n = document.getElementById("n2").value;
+  if (invalid2(n)) return;
+  document.getElementById("resStirling").innerHTML = Stirling(n);
+}
+
+</script>
+
+</body>
+
+</html>
